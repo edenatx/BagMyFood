@@ -11,13 +11,9 @@ class App extends React.Component<{}, {}> {
   state = {users: this.users};
 
   componentDidMount() {
-    /*eslint-disable*/
     fetch('/users')
       .then(res => res.json())
-      .then(users => { 
-        this.setState({users});
-      });
-    /*eslint-enable*/
+      .then(users => this.setState({users}));
   }
 
   render() {
@@ -33,12 +29,5 @@ class App extends React.Component<{}, {}> {
     );
   }
 }
-//  <div className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <h2>Welcome to React</h2>
-//         </div>
-//         <p className="App-intro">
-//           To get started, edit <code>src/App.tsx</code> and save to reload.
-//         </p>
 
 export default App;
