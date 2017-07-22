@@ -5,12 +5,26 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
+import { Provider } from 'react-redux';
+import { Router, Route, Switch } from 'react-router';
+import { createBrowserHistory } from 'history';
+
+import { App } from './containers';
+import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
+const history = createBrowserHistory();
+
 ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
+  <Provider store={store}>
+    <Router history={history}>
+      <Switch>
+        <Route path="/" component={App} />
+      </Switch>
+    </Router>
+  </Provider>,
+  document.getElementById('root')
 );
+
 registerServiceWorker();
