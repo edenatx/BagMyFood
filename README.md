@@ -38,6 +38,7 @@ First build the web application
 
 ```
 cd webapp
+yarn install
 yarn build
 ```
 
@@ -45,6 +46,7 @@ Run the server code and start the WebApp at once
 
 ```
 cd ..
+yarn install
 yarn start
 ```
 
