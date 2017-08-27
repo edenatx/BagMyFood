@@ -10,7 +10,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-This project uses YARN for dependency management
+This project uses YARN for dependency management. Yarn also installs NPM if you don't
+already have it installed.
 
 For MAC OS install:
 ```
@@ -20,6 +21,14 @@ brew install yarn
 For other OS systems checkout YARN site
 
 https://yarnpkg.com/en/docs/install
+
+This project uses create-react-app by Facebook to reduce amount of configuration required to
+get a react web app running. 
+
+For Install:
+```
+npm install -g create-react-app
+```
 
 ### Installing
 
@@ -61,6 +70,7 @@ TBD
 * [React](https://github.com/facebook/react) - React
 * [React-Redux](https://github.com/reactjs/react-redux) - React Redux
 * [Typescript](https://github.com/microsoft/typescript) - Typescript
+* [Create React App](https://github.com/facebookincubator/create-react-app) - Create React App
 
 ## Contributing
 
