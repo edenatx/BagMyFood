@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Grid, Button, Jumbotron } from 'react-bootstrap';
 import { RouteComponentProps } from 'react-router-dom';
 
+import { default as Header } from '../../components/Header';
 import { Dispatch } from 'react-redux';
 import { userQuacks } from '../../quacks/users';
 
@@ -45,17 +46,12 @@ class App extends React.Component<HomeProps, {}> {
   }
 
   render() {
-    const foo = this.props.users.map( user => {
-      return <div key={user.id}>{user.username}</div>;
-    });
-
     return (
       <div className="App">
-       <h1>Users</h1>
-       {foo}
+       <Header/>
        <Jumbotron>
           <Grid>
-            <h1>Welcome to React</h1>
+            <h1>{'Welcome to React'}</h1>
             <p>
               <Button
                 bsStyle="success"

@@ -13,6 +13,9 @@
 /webapp/yarn-debug.log*
 /webapp/yarn-error.log*
 
+# ignore generated CSS files
+/webapp/src/**/*.css
+
 # dependencies
 /node_modules
 
