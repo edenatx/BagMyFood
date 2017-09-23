@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Grid, Button, Jumbotron } from 'react-bootstrap';
 import { RouteComponentProps } from 'react-router-dom';
 
 import { default as Header } from '../../components/Header';
+import { default as BigAds } from '../../components/BigAds';
 import { Dispatch } from 'react-redux';
 import { userQuacks } from '../../quacks/users';
 
@@ -48,22 +48,8 @@ class App extends React.Component<HomeProps, {}> {
   render() {
     return (
       <div className="App">
-       <Header/>
-       <Jumbotron>
-          <Grid>
-            <h1>{'Welcome to React'}</h1>
-            <p>
-              <Button
-                bsStyle="success"
-                bsSize="large"
-                href="http://react-bootstrap.github.io/components.html"
-                target="_blank"
-              >
-                View React Bootstrap Docs
-              </Button>
-            </p>
-          </Grid>
-        </Jumbotron>
+       <Header username={this.props.users[0].username}/>
+        <BigAds/>
       </div>
     );
   }

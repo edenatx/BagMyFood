@@ -4308,7 +4308,7 @@ react-dev-utils@^3.0.2:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@^15.6.1:
+react-dom@^15.4.2, react-dom@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
   dependencies:
@@ -4327,6 +4327,14 @@ react-error-overlay@^1.0.6:
     react-dev-utils "^3.0.2"
     settle-promise "1.0.0"
     source-map "0.5.6"
+
+react-materialize@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/react-materialize/-/react-materialize-1.0.14.tgz#7e16b5b047275c04b1b8aade56937169373d550e"
+  dependencies:
+    classnames "^2.2.5"
+    react "^15.4.2"
+    react-dom "^15.4.2"
 
 react-overlays@^0.7.0:
   version "0.7.0"
@@ -4423,7 +4431,7 @@ react-scripts-ts@2.4.0:
   optionalDependencies:
     fsevents "1.0.17"
 
-react@^15.6.1:
+react@^15.4.2, react@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
   dependencies:

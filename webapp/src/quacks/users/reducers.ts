@@ -22,7 +22,7 @@ function userReducer(state = { users: [] }, action = { type: ''}) {
     default: return {
         ...state,
         users: [
-          {id: 1, username: 'foo'}
+          {id: 1, username: 'Firstname Lastname'}
         ]
       };  
   }
