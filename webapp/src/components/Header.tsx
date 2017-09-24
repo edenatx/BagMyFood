@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from 'react-materialize';
+import { Button, Icon } from 'react-materialize';
 
 import './Header.css';
 
@@ -22,8 +22,13 @@ export default class Header extends React.Component<HeaderProps, {}> {
             {'Welcome ' + this.props.username}
           </div>
           <div className="menu-buttons-container">
-            <Button waves="light" className="buttons">My Account</Button>
-            <Button waves="light" className="buttons">My Cart</Button>
+            <Button waves="light" className="buttons">
+              My Account
+            </Button>
+            <Button waves="light" className="buttons">
+              <Icon left={true}>shopping_cart</Icon>
+              My Cart
+            </Button>
           </div>
       </div>
     );
