@@ -1,14 +1,10 @@
 
-// interface Users {
-//     id: number,
-//     username: string
-// }
+interface User {
+    id: number;
+    username: string;
+}
 
-// interface UsersResponse {
-
-// }
-
-function fetchUsersAPI(): any {
+function fetchUsersAPI(): Promise<User[]> {
     return fetch('/users')
       .then(res => { 
         return res.json();
