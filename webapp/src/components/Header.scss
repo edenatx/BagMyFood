@@ -1,0 +1,36 @@
+@import '../common/styles/colors.scss';
+@import '../common/styles/css/materialize.css';
+
+.header-container {
+    background-color: $primary-background;
+    height: 75px;
+    display: flex;
+    text-align: center;
+    padding-top: 2px;
+    align-items: center;
+
+    .main-menu-container {
+        flex-grow: 10;
+        font-size: 40px;
+        font-family: roboto;
+        color: white;
+        max-width: 50%;
+    };
+
+    .menu-buttons-container {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-evenly;
+        flex: 1 1 20%;
+
+        .buttons {
+            background-color: $primary-buttons;    
+        }
+    }
+
+    .name-container {
+        flex-grow: 1;
+        font-family: roboto;
+        color: white;
+    }
+}
