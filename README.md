@@ -13,6 +13,8 @@ What things you need to install the software and how to install them
 This project uses YARN for dependency management. Yarn also installs NPM if you don't
 already have it installed.
 
+This project requires node version 7.4. NVM is recommended. 
+
 For MAC OS install:
 ```
 brew install yarn

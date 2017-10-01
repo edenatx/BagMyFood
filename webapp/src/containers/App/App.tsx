@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { RouteComponentProps } from 'react-router-dom';
 
 import { default as Header } from '../../components/Header';
 import { default as BigAds } from '../../components/BigAds';
 import { Dispatch } from 'react-redux';
 import { userQuacks } from '../../quacks/users';
+import { ReduxState } from '../../quacks/index';
 
 import './App.css';
 
@@ -14,7 +14,7 @@ interface User {
   username: string;
 }
 
-interface StateProps  extends RouteComponentProps<any> {
+interface StateProps {
   users: Array<User>;
 }
 
@@ -24,7 +24,7 @@ interface DispatchProps {
 
 type HomeProps = StateProps & DispatchProps;
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: ReduxState) {
   return {
     users: state.users.users
   };
@@ -38,7 +38,7 @@ function mapDispatchToProps(dispatch: Dispatch) {
   };
 }
 
-@connect<StateProps, DispatchProps, any>(mapStateToProps, mapDispatchToProps)
+@connect<StateProps, DispatchProps, void>(mapStateToProps, mapDispatchToProps)
 class App extends React.Component<HomeProps, {}> {
 
   componentWillMount() {

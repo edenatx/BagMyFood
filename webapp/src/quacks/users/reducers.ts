@@ -1,23 +1,37 @@
-import { USER_ACTIONS_TYPES } from './actions';
+import { 
+  FETCH_USERS_HAS_STARTED, 
+  FETCH_USERS_WAS_SUCCESSFUL,
+  FETCH_USERS_HAS_ERRORED,
+  FetchUsersHasStartedAction,
+  FetchUsersWasSuccessfulAction,
+  FetchUsersHasErroredAction
+ } from './actions';
+
+export interface UserState {
+  users: string[];
+}
+
+type FetchUsersAction = 
+  FetchUsersHasStartedAction | 
+  FetchUsersWasSuccessfulAction |
+  FetchUsersHasErroredAction;
 
 // Reducer
-function userReducer(state = { users: [] }, action = { type: ''}) {
+function userReducer(state: UserState = { users: [] }, action: FetchUsersAction) {
   switch (action.type) {
     // // do reducer stuff
-    case USER_ACTIONS_TYPES.FETCH_USERS_HAS_STARTED:
+    case FETCH_USERS_HAS_STARTED:
       return {
-        count: 1,
         ...state
       };
-    case USER_ACTIONS_TYPES.FETCH_USERS_HAS_ERRORED:
+    case FETCH_USERS_HAS_ERRORED:
       return {
-        count: 1,
         ...state
       };
-    case USER_ACTIONS_TYPES.FETCH_USERS_WAS_SUCCESSFUL:
+    case FETCH_USERS_WAS_SUCCESSFUL:
       return {
-        count: 1,
-        ...state
+        ...state,
+        users: action.payload
       };
     default: return {
         ...state,

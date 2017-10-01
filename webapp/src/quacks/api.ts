@@ -1,7 +1,14 @@
 
-function fetchUsersAPI(): any {
+interface User {
+    id: number;
+    username: string;
+}
+
+function fetchUsersAPI(): Promise<User[]> {
     return fetch('/users')
-      .then(res => res.json());
+      .then(res => { 
+        return res.json();
+    });
 }
 
 export default {
