@@ -1,0 +1,48 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BagMyFoodAPI", "WebAPI\BagMyFoodAPI.csproj", "{F435F144-D331-4721-8162-8D189A7F9F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.Xunit", "WebAPI.Xunit\WebAPI.Xunit.csproj", "{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Debug|x64.ActiveCfg = Debug|x64
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Debug|x64.Build.0 = Debug|x64
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Debug|x86.ActiveCfg = Debug|x86
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Debug|x86.Build.0 = Debug|x86
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Release|x64.ActiveCfg = Release|x64
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Release|x64.Build.0 = Release|x64
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Release|x86.ActiveCfg = Release|x86
+		{F435F144-D331-4721-8162-8D189A7F9F0B}.Release|x86.Build.0 = Release|x86
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Debug|x64.ActiveCfg = Debug|x64
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Debug|x64.Build.0 = Debug|x64
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Debug|x86.ActiveCfg = Debug|x86
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Debug|x86.Build.0 = Debug|x86
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Release|x64.ActiveCfg = Release|x64
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Release|x64.Build.0 = Release|x64
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Release|x86.ActiveCfg = Release|x86
+		{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

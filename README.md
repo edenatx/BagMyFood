@@ -12,10 +12,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
+This project requires node version 7.4. Using a manager as NVM is highly recommended. 
+
 This project uses YARN for dependency management. Yarn also installs NPM if you don't
 already have it installed.
-
-This project requires node version 7.4. NVM is recommended. 
 
 For MAC OS install:
 ```
@@ -34,6 +34,13 @@ For Install:
 npm install -g create-react-app
 ```
 
+This project uses DotNet Core 2.0 for the server
+
+For Install:
+```
+https://www.microsoft.com/net/core#macos
+```
+
 ### Installing
 
 A step by step series of examples that tell you have to get a development env running
@@ -50,26 +57,46 @@ Run the server code and start the WebApp at once
 
 ```
 cd ..
-yarn install
-yarn start
+cd server
+dotnet restore
+cd WebAPI
+dotnet run
 ```
 
 Bring up the website in your browser. 
 
 ```
-localhost:3000
+localhost:5000
+```
+For faster developement start server code and run site in create react app
+```
+cd server/WebAPI
+dotnet run
+* separate terminal *
+cd webapp
+yarn start
 ```
 
 ## Running the tests
 
-TBD
+Server tests
+```
+cd webapp
+dotnet test
+```
 
+Client tests
+```
+yarn test
+```
 ### And coding style tests
 
 We are using TSLint for styling standards
 ## Deployment
 
-TBD
+Asp.Net WebAPI will server up the static content produced by create-react-app. 
+Deployment will involve getting the build artifact fro dotnet and deploying to the cloud.
+This has not been done yet so it needs to be properly worked out
 
 ## Built With
 
@@ -77,6 +104,7 @@ TBD
 * [React-Redux](https://github.com/reactjs/react-redux) - React Redux
 * [Typescript](https://github.com/microsoft/typescript) - Typescript
 * [Create React App](https://github.com/facebookincubator/create-react-app) - Create React App
+* [Asp.Net Core](https://docs.microsoft.com/en-us/aspnet/core/) - Asp.Net Core 
 
 ## Contributing
 

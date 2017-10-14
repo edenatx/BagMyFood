@@ -4,7 +4,8 @@ import { Button, Icon } from 'react-materialize';
 import './Header.css';
 
 interface HeaderProps {
-  username: String;
+  firstName: String;
+  lastName: String;
 }
 
 export default class Header extends React.Component<HeaderProps, {}> {
@@ -19,7 +20,7 @@ export default class Header extends React.Component<HeaderProps, {}> {
             {'Bag My Food'}
           </div>
           <div className="name-container">
-            {'Welcome ' + this.props.username}
+            {'Welcome ' + this.props.firstName + ' ' + this.props.lastName}
           </div>
           <div className="menu-buttons-container">
             <Button waves="light" className="buttons">
