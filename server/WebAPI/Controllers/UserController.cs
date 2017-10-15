@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BagMyFoodAPI.DTO;
-using Newtonsoft.Json;
 
 namespace BagMyFoodAPI.Controllers
 {
@@ -16,7 +15,6 @@ namespace BagMyFoodAPI.Controllers
         public List<User> Get()
         {
             User newUser = new User(1, "Blue", "Berry");
-            // string result = JsonConvert.SerializeObject(newUser);
             var results = new List<User>();
             results.Add(newUser);
             return results;
@@ -24,11 +22,10 @@ namespace BagMyFoodAPI.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public User Get(int id)
         {
             User newUser = new User(id, "Blue", "Berry");
-            string result = JsonConvert.SerializeObject(newUser);
-            return result;
+            return newUser;
         }
 
         // POST api/values
