@@ -59,7 +59,7 @@ Run the server code and start the WebApp at once
 cd ..
 cd server
 dotnet restore
-cd WebAPI
+cd BagAPI
 dotnet run
 ```
 
@@ -70,7 +70,7 @@ localhost:5000
 ```
 For faster developement start server code and run site in create react app
 ```
-cd server/WebAPI
+cd server/BagAPI
 dotnet run
 * separate terminal *
 cd webapp
@@ -94,7 +94,7 @@ yarn test
 We are using TSLint for styling standards
 ## Deployment
 
-Asp.Net WebAPI will server up the static content produced by create-react-app. 
+Asp.Net BagAPI will server up the static content produced by create-react-app. 
 Deployment will involve getting the build artifact fro dotnet and deploying to the cloud.
 This has not been done yet so it needs to be properly worked out
 

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BagMyFoodAPI", "WebAPI\BagMyFoodAPI.csproj", "{F435F144-D331-4721-8162-8D189A7F9F0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BagMyFoodAPI", "BagAPI\BagMyFoodAPI.csproj", "{F435F144-D331-4721-8162-8D189A7F9F0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.Xunit", "WebAPI.Xunit\WebAPI.Xunit.csproj", "{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BagAPI.Xunit", "BagAPI.Xunit\BagAPI.Xunit.csproj", "{70D7B9F2-4D2B-4C8E-B3D5-9FC2AA0C2042}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

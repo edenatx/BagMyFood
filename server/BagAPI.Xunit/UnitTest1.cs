@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace WebAPI.Xunit
+namespace BagAPI.Xunit
 {
     public class UnitTest1
     {

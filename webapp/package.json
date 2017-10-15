@@ -45,8 +45,8 @@
     "postbuild": "npm run copy-to-wwwroot",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "clean-server": "rimraf ../server/WebAPI/wwwroot",
-    "copy-to-wwwroot": "npm run clean-server && ncp ./build ../server/WebAPI/wwwroot"
+    "clean-server": "rimraf ../server/BagAPI/wwwroot",
+    "copy-to-wwwroot": "npm run clean-server && ncp ./build ../server/BagAPI/wwwroot"
   },
   "proxy": "http://localhost:5000"
 }

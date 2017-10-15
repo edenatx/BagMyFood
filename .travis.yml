@@ -17,5 +17,5 @@ install:
 script:
   - cd webapp
   - yarn test
-  - cd ../server/WebAPI.Xunit
+  - cd ../server/BagAPI.Xunit
   - dotnet test
