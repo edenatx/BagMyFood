@@ -1,14 +1,21 @@
-language: node_js
+language: csharp
+mono: none
+dotnet: 2.0.0
 node_js:
   - 7.4.0
 cache:
   yarn: true
   directories:
-    - node_modules
     - webapp/node_modules
-before_script:
+install:
   - cd webapp
-script:
   - yarn install
   - yarn build
+  - cd ../server
+  - dotnet restore
+  - cd ..
+script:
+  - cd webapp
   - yarn test
+  - cd ../server/BagAPI.Xunit
+  - dotnet test

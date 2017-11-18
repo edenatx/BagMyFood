@@ -36,9 +36,13 @@ function userReducer(state: UserState = { users: [] }, action: FetchUsersAction)
     default: return {
         ...state,
         users: [
-          {id: 1, username: 'Firstname Lastname'}
+          { 
+            id: 1, 
+            firstName: 'Firstname',
+            lastName: 'Lastname'
+          }
         ]
-      };  
+      }; 
   }
 }
 

@@ -15,7 +15,7 @@ describe('AppContainer', () => {
     };
   };
   
-  const users = { id: '1', username: 'foobar'};
+  const users = { id: '1', firstName: 'foo', lastName: 'bar'};
   
   const fakeState = {
     users: {

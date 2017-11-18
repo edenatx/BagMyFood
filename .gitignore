@@ -1,5 +1,16 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+###########################
+# Server side
+###########################
+/server/*/bin
+/server/*/wwwroot
+/server/*/obj
+
+###########################
+# Client side
+###########################
+
 # Ignore node modules of web app
 /webapp/node_modules
 /webapp/coverage
@@ -18,22 +29,8 @@
 !materialize.css
 !materialize.min.css
 
-# dependencies
-/node_modules
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.DS_Store

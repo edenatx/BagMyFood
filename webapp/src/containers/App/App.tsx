@@ -11,7 +11,8 @@ import './App.css';
 
 interface User {
   id: string;
-  username: string;
+  firstName: string;
+  lastName: string;
 }
 
 interface StateProps {
@@ -46,9 +47,10 @@ class App extends React.Component<HomeProps, {}> {
   }
 
   render() {
+    const clientUser = this.props.users[0];
     return (
       <div className="App">
-       <Header username={this.props.users[0].username}/>
+       <Header firstName={clientUser.firstName} lastName={clientUser.lastName}/>
         <BigAds/>
       </div>
     );

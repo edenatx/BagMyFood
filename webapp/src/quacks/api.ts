@@ -1,11 +1,12 @@
 
 interface User {
     id: number;
-    username: string;
+    firstName: string;
+    lastName: string;
 }
 
 function fetchUsersAPI(): Promise<User[]> {
-    return fetch('/users')
+    return fetch('/api/user')
       .then(res => { 
         return res.json();
     });
