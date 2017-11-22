@@ -12,14 +12,14 @@ namespace BagMyFoodAPI.Controllers
 {
     [Route("api/[controller]")]
     public class SearchController : Controller{
-         [HttpGet]
+         [HttpGet("{searchTerm}")]
         public SearchResultsModel Get(string searchTerm)
         {
            var results = GetSearchResults(searchTerm);
              return results;
         }
 
-        [HttpGet]
+        [HttpGet("aisle/{upc}")]
         public AisleLocationResultsModel GetAisle(string upc)
         {
             var locations = GetAisleLocations(upc);
@@ -38,8 +38,7 @@ namespace BagMyFoodAPI.Controllers
                     webRequest.Headers["X-ApplicationAuthorizationToken"] = "2E51C200-618E-426C-BD9C-EEB8AB228B37";
                     ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
                          | SecurityProtocolType.Tls11
-                         | SecurityProtocolType.Tls12
-                         | SecurityProtocolType.Ssl3;
+                         | SecurityProtocolType.Tls12;
                 }
                 return webRequest;
             }
