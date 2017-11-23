@@ -11,7 +11,11 @@ using BagMyFoodAPI.Models;
 namespace BagMyFoodAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class SearchController : Controller{
+    public class ProductController : Controller{
+        private const string SEARCH_URL = "https://api.kroger.com/shoppinglist/2/krogerlist/item-catalog/search/predictive?q=";
+        private const string AISLE_SEARCH_URL ="https://api.kroger.com/shoppinglist/2/krogerlist/kroger/items/list?upc=";
+        private const string AUTH_TOKEN ="2E51C200-618E-426C-BD9C-EEB8AB228B37";
+
          [HttpGet("{searchTerm}")]
         public SearchResultsModel Get(string searchTerm)
         {
@@ -35,7 +39,7 @@ namespace BagMyFoodAPI.Controllers
                 {
                     webRequest.Method = "GET";
                     webRequest.ContentType = "application/json";
-                    webRequest.Headers["X-ApplicationAuthorizationToken"] = "2E51C200-618E-426C-BD9C-EEB8AB228B37";
+                    webRequest.Headers["X-ApplicationAuthorizationToken"] = AUTH_TOKEN;
                     ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
                          | SecurityProtocolType.Tls11
                          | SecurityProtocolType.Tls12;
@@ -44,28 +48,34 @@ namespace BagMyFoodAPI.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-                return null;
+               throw ex;
             }
         }
 
-        private SearchResultsModel GetSearchResults(string searchTerm, int offset = 0, int limit=50)
-        {
-            string url = string.Format("https://api.kroger.com/shoppinglist/2/krogerlist/item-catalog/search/predictive?q={0}&offset={1}&limit={2}&div=034&store=00312&displayonweb=kroger", searchTerm, offset, limit);
-            try
-            {
-                var webRequest = CraftWebRequest(url);
-
-                using (System.IO.Stream s = webRequest.GetResponse().GetResponseStream())
+        private string GetWebResponse(WebRequest request){
+            try{
+                using (System.IO.Stream s = request.GetResponse().GetResponseStream())
                 {
                     using (System.IO.StreamReader sr = new System.IO.StreamReader(s))
                     {
                         var jsonResponse = sr.ReadToEnd();
 
-                        var deserializedResponse = JsonConvert.DeserializeObject<SearchResultsModel>(jsonResponse);
-                        return deserializedResponse;
+                        return jsonResponse;
                     }
                 }
+            }
+            catch(Exception ex){
+              throw ex;
+            }
+        }
+        private SearchResultsModel GetSearchResults(string searchTerm, int offset = 0, int limit=50)
+        {
+            var url = string.Format("{0}{1}&offset={2}&limit={3}&div=034&store=00312&displayonweb=kroger", SEARCH_URL,searchTerm, offset, limit);
+            try
+            {
+                var webRequest = CraftWebRequest(url);
+                var deserializedResponse = JsonConvert.DeserializeObject<SearchResultsModel>(GetWebResponse(webRequest));
+                return deserializedResponse;
             }
             catch (Exception ex)
             {
@@ -76,21 +86,12 @@ namespace BagMyFoodAPI.Controllers
 
         private AisleLocationResultsModel GetAisleLocations(string upc)
         {
-            string url = string.Format("https://api.kroger.com/shoppinglist/2/krogerlist/kroger/items/list?upc={0}&div=034&store=00312", upc);
+            string url = string.Format("{0}{1}&div=034&store=00312",AISLE_SEARCH_URL, upc);
             try
             {
                 var webRequest = CraftWebRequest(url);
-
-                using (System.IO.Stream s = webRequest.GetResponse().GetResponseStream())
-                {
-                    using (System.IO.StreamReader sr = new System.IO.StreamReader(s))
-                    {
-                        var jsonResponse = sr.ReadToEnd();
-
-                        var deserializedResponse = JsonConvert.DeserializeObject<AisleLocationResultsModel>(jsonResponse);
-                        return deserializedResponse;
-                    }
-                }
+                var deserializedResponse = JsonConvert.DeserializeObject<AisleLocationResultsModel>(GetWebResponse(webRequest));
+                return deserializedResponse;
             }
             catch (Exception ex)
             {

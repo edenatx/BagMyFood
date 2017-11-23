@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace BagMyFoodAPI.Models
 {
     public class ItemModel
     {
+        [JsonIgnore]
+        private const string IMG_URL = "http://www.kroger.com/product/images/095000003/";
         public string Upc { get; set; }
         public string Description { get; set; }
         public string ItemSize { get; set; }
@@ -21,14 +24,14 @@ namespace BagMyFoodAPI.Models
 
         public string SmallImageSrc { get
             {
-                return string.Format("http://www.kroger.com/product/images/095000003/small/front/{0}", Upc);
+                return string.Format("{0}small/front/{1}", IMG_URL, Upc);
             }
         }
         public string LargeImageSrc
         {
             get
             {
-                return string.Format("http://www.kroger.com/product/images/095000003/large/front/{0}", Upc);
+                return string.Format("{0}/large/front/{0}",IMG_URL, Upc);
             }
         }
     }
